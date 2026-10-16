@@ -1,17 +1,21 @@
 # 医学影像系统实施运维工具
 
-DICOM 联调、文件工具和现场诊断客户端的发行版下载仓库。
+客户端安装包、发布说明与更新清单下载。
 
-从 [最新发行版](https://github.com/jssyy/dicom-client-tools/releases/latest) 下载 Windows 客户端。ZIP 解压后运行 DicomOpsTool.exe，或使用 EXE 单文件版。
+- [Gitee 国内下载](https://gitee.com/amumu/dicom-client-tools-releases/releases/latest)
+- [GitHub 下载](https://github.com/jssyy/dicom-client-tools/releases/latest)
 
-## 检查更新
+## V1.1.0.43 双源自动更新
 
-在程序中打开「帮助 → 检查更新 → 发布源设置」，选择「内网清单 latest.json（共享目录 / 内网网址）」，填入以下地址并保存。这个选项同样支持公网 HTTPS 地址：
+43 版支持 Gitee / GitHub 自动选择、同版本故障切换、分卷自动下载合并和 SHA256 校验。
+打开「帮助 → 检查更新」，发布源选择「自动选择（Gitee 优先 / GitHub 备用）」。
+旧默认设置会迁移，自定义内网更新源继续保留。
 
-```text
-https://github.com/jssyy/dicom-client-tools/releases/latest/download/latest.json
-```
+## 首次安装或从 42 版升级
 
-点击「检查更新」即可。当前版本等于最新版本时显示已是最新版本；以后发布更高版本后可下载并升级。升级时保留现场配置和影像目录。访问 GitHub 需要可用的网络连接。
+GitHub 可下载完整 EXE 或 ZIP。EXE 单文件版可重命名为 DicomOpsTool.exe 使用；ZIP 解压后运行其中的 DicomOpsTool.exe。
 
-本仓库当前用于分发客户端安装包和更新清单。
+Gitee 单附件限制 100MB。请下载 DicomOpsTool_V1.1.0.43.zip.001、DicomOpsTool_V1.1.0.43.zip.002 和 Merge_DicomOpsTool_V1.1.0.43.cmd，放在同一目录；双击合并脚本，校验通过后解压生成的 ZIP。
+两个分卷都必须下载。也可用支持分卷的压缩工具打开 .zip.001。
+
+升级前退出旧程序，保留原有配置和影像目录。请下载程序附件；Source code 自动快照仅包含本下载仓库的说明文件。
